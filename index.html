@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Professional Profile</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    inter: ['Inter', 'ui-sans-serif', 'system-ui'],
+                    oswald: ['Oswald', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', ui-sans-serif, system-ui;
+        background: #000000;
+        color: #ffffff;
+        overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #090A0B;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #f97316;
+        border-radius: 10px;
+    }
+
+    /* Animations */
+    @keyframes animationIn {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(8px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+    }
+
+    @keyframes slideDownClip {
+        0% {
+            transform: translateY(-105%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes border-beam-v {
+        0% {
+            transform: translateY(-100%);
+        }
+
+        100% {
+            transform: translateY(100vh);
+        }
+    }
+
+    @keyframes border-beam-h {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(100vw);
+        }
+    }
+
+    @keyframes float-slow {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes float-medium {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes float-fast {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes pulse-glow {
+
+        0%,
+        100% {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        50% {
+            box-shadow: 0 0 40px rgba(249, 115, 22, 0.6);
+        }
+    }
+
+    @keyframes rotate-slow {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes rotate-reverse {
+        0% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    @keyframes typewriter {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+
+        0%,
+        100% {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: #f97316;
+        }
+    }
+
+    @keyframes scaleIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes ripple {
+        0% {
+            transform: scale(1);
+            opacity: 0.4;
+        }
+
+        100% {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes countUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes gradient-shift {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes spin-slow {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .anim-in {
+        animation: animationIn 0.8s ease-out both;
+    }
+
+    .anim-in-1 {
+        animation: animationIn 0.8s ease-out 0.1s both;
+    }
+
+    .anim-in-2 {
+        animation: animationIn 0.8s ease-out 0.2s both;
+    }
+
+    .anim-in-3 {
+        animation: animationIn 0.8s ease-out 0.3s both;
+    }
+
+    .anim-in-4 {
+        animation: animationIn 0.8s ease-out 0.4s both;
+    }
+
+    .anim-in-5 {
+        animation: animationIn 0.8s ease-out 0.5s both;
+    }
+
+    .anim-in-6 {
+        animation: animationIn 0.8s ease-out 0.6s both;
+    }
+
+    .anim-in-7 {
+        animation: animationIn 0.8s ease-out 0.7s both;
+    }
+
+    .anim-in-8 {
+        animation: animationIn 0.8s ease-out 0.8s both;
+    }
+
+    .float-slow {
+        animation: float-slow 6s ease-in-out infinite;
+    }
+
+    .float-medium {
+        animation: float-medium 5s ease-in-out infinite;
+    }
+
+    .float-fast {
+        animation: float-fast 4s ease-in-out infinite;
+    }
+
+    .pulse-glow {
+        animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    .rotate-slow {
+        animation: rotate-slow 20s linear infinite;
+    }
+
+    .rotate-reverse {
+        animation: rotate-reverse 25s linear infinite;
+    }
+
+    .spin-slow {
+        animation: spin-slow 12s linear infinite;
+    }
+
+    /* Hero Title */
+    .hero-title span {
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .hero-title span em {
+        display: inline-block;
+        font-style: normal;
+        animation: slideDownClip 0.8s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    }
+
+    /* Shimmer Effect */
+    .shimmer {
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+        background-size: 200% 100%;
+        animation: shimmer 3s linear infinite;
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+        background: linear-gradient(135deg, #f97316, #fb923c, #fbbf24, #f97316);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-shift 4s ease infinite;
+    }
+
+    /* Card Hover */
+    .card-hover {
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .card-hover:hover {
+        transform: translateY(-8px);
+        border-color: rgba(249, 115, 22, 0.3);
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(249, 115, 22, 0.1);
+    }
+
+    /* Social Icon Hover */
+    .social-icon {
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social-icon::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        opacity: 0;
+        transition: opacity 0.4s;
+        border-radius: inherit;
+    }
+
+    .social-icon:hover::before {
+        opacity: 1;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+    }
+
+    .social-icon iconify-icon {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Nav Link Underline */
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #f97316;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        transform: scaleX(0);
+    }
+
+    .nav-link:hover::after {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    .nav-link:hover {
+        color: #ffffff;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+        background: linear-gradient(to bottom right, #fb923c, #ea580c);
+        box-shadow: 0 0 50px -12px #f97316;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+        left: 100%;
+    }
+
+    .btn-primary:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 70px -12px #f97316;
+    }
+
+    .btn-primary:active {
+        transform: scale(0.98);
+    }
+
+    .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+        border-color: #f97316;
+        background: rgba(249, 115, 22, 0.05);
+        color: #f97316;
+        transform: scale(1.03);
+    }
+
+    /* Border Beam */
+    .border-beam-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .border-beam-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 60px;
+        background: linear-gradient(to bottom, transparent, rgba(249, 115, 22, 0.4), transparent);
+        animation: border-beam-v 5s linear infinite;
+        z-index: 10;
+    }
+
+    .border-beam-container::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 2px;
+        width: 60px;
+        background: linear-gradient(to right, transparent, rgba(249, 115, 22, 0.4), transparent);
+        animation: border-beam-h 7s linear infinite 2.5s;
+        z-index: 10;
+    }
+
+    /* Section Reveal */
+    .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Marquee */
+    .marquee-track {
+        display: flex;
+        animation: marquee 30s linear infinite;
+        width: max-content;
+    }
+
+    .marquee-track:hover {
+        animation-play-state: paused;
+    }
+
+    /* Skill Bar */
+    .skill-bar-fill {
+        transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        width: 0;
+    }
+
+    .skill-bar-fill.active {
+        /* width set via JS */
+    }
+
+    /* Timeline */
+    .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, transparent, rgba(249, 115, 22, 0.3), rgba(249, 115, 22, 0.5), rgba(249, 115, 22, 0.3), transparent);
+        transform: translateX(-50%);
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 16px 24px;
+        background: rgba(10, 10, 10, 0.95);
+        border: 1px solid rgba(249, 115, 22, 0.3);
+        border-radius: 12px;
+        backdrop-filter: blur(12px);
+        transform: translateX(120%);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 9999;
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    /* Image Mask */
+    .img-mask {
+        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
+
+    /* Cursor Glow */
+    .cursor-glow {
+        pointer-events: none;
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.06) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        transition: opacity 0.3s;
+    }
+
+    /* Grid Pattern */
+    .grid-pattern {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 60px 60px;
+    }
+
+    /* Radial Gradient BG */
+    .radial-bg {
+        background: radial-gradient(ellipse at 50% 0%, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+    }
+
+    /* Glass Card */
+    .glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Dot Pattern */
+    .dot-pattern {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    /* Accordion */
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s;
+    }
+
+    .faq-answer.open {
+        max-height: 300px;
+        padding-top: 12px;
+        padding-bottom: 4px;
+    }
+
+    .faq-icon {
+        transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+    }
+
+    /* Progress Ring */
+    .progress-ring-circle {
+        transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+    /* Tab */
+    .tab-btn {
+        transition: all 0.3s;
+    }
+
+    .tab-btn.active {
+        background: rgba(249, 115, 22, 0.1);
+        color: #f97316;
+        border-color: rgba(249, 115, 22, 0.3);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+        animation: animationIn 0.5s ease-out both;
+    }
+
+    /* Tilt */
+    .tilt-card {
+        transition: transform 0.3s;
+    }
+
+    /* Back to top */
+    .back-to-top {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s;
+        pointer-events: none;
+    }
+
+    .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    @media (max-width: 768px) {
+        .timeline-line {
+            left: 20px;
+        }
+    }
+</style>
+
+<body>
+    </head>
+
+    <body class="font-inter">
+
+        <!-- Cursor Glow -->
+        <div class="cursor-glow" id="cursorGlow"></div>
+
+        <!-- Background Effects -->
+        <div class="fixed inset-0 z-0 pointer-events-none">
+            <div class="absolute inset-0 grid-pattern opacity-30"></div>
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-b from-orange-500/5 to-transparent rounded-full blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-orange-600/3 to-transparent rounded-full blur-3xl">
+            </div>
+        </div>
+
+        <!-- ==================== NAVIGATION ==================== -->
+        <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+            style="padding: 20px 16px; backdrop-filter: blur(12px); background: rgba(0,0,0,0.6);">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-3 group anim-in">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40 transition-shadow">
+                        <span class="font-oswald font-bold text-black text-lg">B</span>
+                    </div>
+                    <span class="font-oswald font-medium text-lg tracking-wide uppercase hidden sm:block">Basit<span
+                            class="text-orange-500">Portfolio</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-8 anim-in-2">
+                    <a href="#hero" class="nav-link text-sm text-slate-300 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-sm text-slate-300 font-medium">About</a>
+                    <a href="#services" class="nav-link text-sm text-slate-300 font-medium">Services</a>
+                    <a href="#portfolio" class="nav-link text-sm text-slate-300 font-medium">Portfolio</a>
+                    <a href="#experience" class="nav-link text-sm text-slate-300 font-medium">Experience</a>
+                    <a href="#testimonials" class="nav-link text-sm text-slate-300 font-medium">Testimonials</a>
+                    <a href="#blog" class="nav-link text-sm text-slate-300 font-medium">Blog</a>
+                    <a href="#contact" class="nav-link text-sm text-slate-300 font-medium">Contact</a>
+                </div>
+
+                <!-- CTA + Mobile Toggle -->
+                <div class="flex items-center gap-4 anim-in-3">
+                    <a href="#contact"
+                        class="hidden md:inline-flex btn-primary px-5 py-2.5 text-sm font-semibold text-white rounded-xl">
+                        Hire Me
+                    </a>
+                    <button id="mobileToggle"
+                        class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg border border-white/10 hover:border-orange-500/30 transition-colors">
+                        <span class="w-5 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+                        <span class="w-5 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+                        <span class="w-3 h-0.5 bg-white transition-all duration-300 self-start ml-[10px]"
+                            id="bar3"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="mobile-menu fixed inset-y-0 right-0 w-80 max-w-full z-50 bg-black/95 backdrop-blur-xl border-l border-white/5">
+            <div class="p-6 pt-20 flex flex-col gap-2">
+                <a href="#hero"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Home</a>
+                <a href="#about"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">About</a>
+                <a href="#services"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Services</a>
+                <a href="#portfolio"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Portfolio</a>
+                <a href="#experience"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Experience</a>
+                <a href="#testimonials"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Testimonials</a>
+                <a href="#blog"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Blog</a>
+                <a href="#contact"
+                    class="mobile-nav-link block py-3 px-4 text-lg font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-all">Contact</a>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <a href="#contact"
+                        class="btn-primary block text-center px-5 py-3 text-sm font-semibold text-white rounded-xl">Hire
+                        Me</a>
+                </div>
+                <!-- Mobile Social Links -->
+                <div class="mt-6 flex items-center justify-center gap-4">
+                    <a href="https://www.facebook.com/raibasit.basit.94" target="_blank"
+                        class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                            icon="mdi:facebook" width="20"></iconify-icon></a>
+                    <a href="https://www.instagram.com/raibasitbasit355/" target="_blank"
+                        class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                            icon="mdi:instagram" width="20"></iconify-icon></a>
+                    <a href="https://x.com/raibasit913" target="_blank"
+                        class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                            icon="mdi:twitter" width="20"></iconify-icon></a>
+                    <a href="https://www.linkedin.com/in/muhammad-basit-b155a1400/?skipRedirect=true" target="_blank"
+                        class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                            icon="mdi:linkedin" width="20"></iconify-icon></a>
+                    <a href="https://www.youtube.com/@raibasitking" target="_blank"
+                        class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                            icon="mdi:youtube" width="20"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+        <div id="mobileOverlay" class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300">
+        </div>
+
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-24 pb-10">
+            <!-- Decorative Elements -->
+            <div class="absolute top-20 right-10 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl float-slow"></div>
+            <div class="absolute bottom-20 left-10 w-96 h-96 bg-orange-600/3 rounded-full blur-3xl float-medium"></div>
+            <div class="absolute top-1/3 right-1/4 w-3 h-3 bg-orange-500/40 rounded-full float-fast"></div>
+            <div class="absolute bottom-1/3 left-1/3 w-2 h-2 bg-orange-400/30 rounded-full float-slow"></div>
+            <div class="absolute top-1/4 left-1/4 w-1.5 h-1.5 bg-yellow-400/20 rounded-full float-medium"></div>
+
+            <!-- Rotating Ring -->
+            <div
+                class="absolute right-[-100px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-orange-500/5 rounded-full rotate-slow hidden lg:block">
+            </div>
+            <div
+                class="absolute right-[-50px] top-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-orange-500/10 rounded-full rotate-reverse hidden lg:block">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <!-- Left Content -->
+                    <div class="flex-1 text-center lg:text-left">
+                        <!-- Badge -->
+                        <div
+                            class="anim-in-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-xs font-medium text-slate-300 tracking-wide uppercase">Available for
+                                Freelance</span>
+                        </div>
+
+                        <!-- Title -->
+                        <h1
+                            class="hero-title font-oswald font-medium uppercase leading-[0.85] tracking-[-0.04em] text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] mb-6">
+                            <span><em style="animation-delay: 400ms" class="block text-white">Creative</em></span>
+                            <span><em style="animation-delay: 500ms" class="block gradient-text">Developer</em></span>
+                            <span><em style="animation-delay: 600ms" class="block text-white/80">&amp;
+                                    Designer</em></span>
+                        </h1>
+
+                        <!-- Description -->
+                        <p
+                            class="anim-in-4 text-base md:text-lg text-neutral-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+                            I craft stunning digital experiences that blend cutting-edge technology with beautiful
+                            design. Specializing in web development, UI/UX design, and brand identity.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div
+                            class="anim-in-5 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
+                            <a href="#portfolio"
+                                class="btn-primary px-8 py-3.5 text-lg font-semibold text-white rounded-xl flex items-center gap-2">
+                                View My Work
+                                <iconify-icon icon="mdi:arrow-right" width="20"></iconify-icon>
+                            </a>
+                            <a href="#contact"
+                                class="btn-outline px-8 py-3.5 text-lg font-medium text-white rounded-xl flex items-center gap-2">
+                                <iconify-icon icon="mdi:download" width="20"></iconify-icon>
+                                Download CV
+                            </a>
+                        </div>
+
+                        <!-- Stats Mini -->
+                        <div class="anim-in-6 flex items-center gap-8 justify-center lg:justify-start">
+                            <div>
+                                <div class="font-oswald text-3xl font-medium text-white" id="stat1">0</div>
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Projects</div>
+                            </div>
+                            <div class="w-px h-10 bg-white/10"></div>
+                            <div>
+                                <div class="font-oswald text-3xl font-medium text-white" id="stat2">0</div>
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Clients</div>
+                            </div>
+                            <div class="w-px h-10 bg-white/10"></div>
+                            <div>
+                                <div class="font-oswald text-3xl font-medium text-white" id="stat3">0</div>
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mt-1">Awards</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="flex-shrink-0 anim-in-3 relative">
+                        <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                            <!-- Glow Behind -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/5 rounded-full blur-3xl scale-110">
+                            </div>
+                            <!-- Rotating Border -->
+                            <div
+                                class="absolute inset-0 rounded-full border-2 border-dashed border-orange-500/20 spin-slow">
+                            </div>
+                            <!-- Image -->
+                            <div
+                                class="absolute inset-3 rounded-full overflow-hidden border-2 border-orange-500/30 pulse-glow">
+                                <img src="https://picsum.photos/seed/vipportrait/600/600.jpg" alt="Profile"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <!-- Floating Badges -->
+                            <div class="absolute -right-4 top-8 glass rounded-xl px-3 py-2 float-fast">
+                                <div class="flex items-center gap-2">
+                                    <iconify-icon icon="mdi:code-braces" class="text-orange-500"
+                                        width="18"></iconify-icon>
+                                    <span class="text-xs font-medium">Full Stack</span>
+                                </div>
+                            </div>
+                            <div class="absolute -left-4 bottom-16 glass rounded-xl px-3 py-2 float-slow">
+                                <div class="flex items-center gap-2">
+                                    <iconify-icon icon="mdi:palette" class="text-orange-500" width="18"></iconify-icon>
+                                    <span class="text-xs font-medium">UI/UX Design</span>
+                                </div>
+                            </div>
+                            <div class="absolute right-4 -bottom-2 glass rounded-xl px-3 py-2 float-medium">
+                                <div class="flex items-center gap-2">
+                                    <iconify-icon icon="mdi:star" class="text-yellow-500" width="18"></iconify-icon>
+                                    <span class="text-xs font-medium">5.0 Rating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 anim-in-8">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Scroll Down</span>
+                <div class="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
+                    <div class="w-1 h-2 bg-orange-500 rounded-full animate-bounce"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MARQUEE SECTION ==================== -->
+        <section class="relative py-8 border-y border-white/5 overflow-hidden">
+            <div class="marquee-track">
+                <div
+                    class="flex items-center gap-12 px-6 text-2xl font-oswald uppercase tracking-wider text-white/10 whitespace-nowrap">
+                    <span>Web Development</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>UI/UX Design</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Brand Identity</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Mobile Apps</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>SEO Optimization</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Video Editing</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Graphic Design</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Content Writing</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                </div>
+                <div
+                    class="flex items-center gap-12 px-6 text-2xl font-oswald uppercase tracking-wider text-white/10 whitespace-nowrap">
+                    <span>Web Development</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>UI/UX Design</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Brand Identity</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Mobile Apps</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>SEO Optimization</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Video Editing</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Graphic Design</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                    <span>Content Writing</span><iconify-icon icon="mdi:star-four-points"
+                        class="text-orange-500/30"></iconify-icon>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="about" class="relative py-24 md:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <!-- Left Image Grid -->
+                    <div class="reveal flex-1 relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4">
+                                <div class="rounded-2xl overflow-hidden border border-white/5 aspect-[3/4]">
+                                    <img src="https://picsum.photos/seed/about1vip/400/533.jpg" alt="About"
+                                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div class="rounded-2xl overflow-hidden border border-white/5 aspect-square">
+                                    <img src="https://picsum.photos/seed/about2vip/400/400.jpg" alt="About"
+                                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                                </div>
+                            </div>
+                            <div class="space-y-4 pt-8">
+                                <div class="rounded-2xl overflow-hidden border border-white/5 aspect-square">
+                                    <img src="https://picsum.photos/seed/about3vip/400/400.jpg" alt="About"
+                                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div class="rounded-2xl overflow-hidden border border-white/5 aspect-[3/4]">
+                                    <img src="https://picsum.photos/seed/about4vip/400/533.jpg" alt="About"
+                                        class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Experience Badge -->
+                        <div
+                            class="absolute -bottom-6 -right-6 md:right-auto md:-left-6 glass rounded-2xl p-5 border-beam-container">
+                            <div class="font-oswald text-4xl font-medium gradient-text">8+</div>
+                            <div class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Years Experience</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="reveal flex-1" style="transition-delay: 0.2s;">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                            <iconify-icon icon="mdi:account" class="text-orange-500" width="14"></iconify-icon>
+                            <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">About Me</span>
+                        </div>
+
+                        <h2
+                            class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95] mb-6">
+                            Turning Ideas Into<br><span class="gradient-text">Digital Reality</span>
+                        </h2>
+
+                        <p class="text-neutral-400 leading-relaxed mb-6">
+                            I'm a passionate full-stack developer and designer with over 8 years of experience creating
+                            impactful digital solutions. My journey started with curiosity and evolved into a career
+                            dedicated to pushing the boundaries of web technology and design.
+                        </p>
+                        <p class="text-neutral-400 leading-relaxed mb-8">
+                            I believe in clean code, thoughtful design, and delivering experiences that not only look
+                            beautiful but also perform exceptionally. Every project I take on is an opportunity to
+                            create something extraordinary.
+                        </p>
+
+                        <!-- Info Grid -->
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="glass rounded-xl p-4">
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Name</div>
+                                <div class="text-sm font-medium">Muhammad Basit</div>
+                            </div>
+                            <div class="glass rounded-xl p-4">
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Location</div>
+                                <div class="text-sm font-medium">Pakistan 🇵🇰</div>
+                            </div>
+                            <div class="glass rounded-xl p-4">
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Email</div>
+                                <div class="text-sm font-medium">raisahab2773@gmail.com</div>
+                            </div>
+                            <div class="glass rounded-xl p-4">
+                                <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Availability</div>
+                                <div class="text-sm font-medium text-green-400">Open to Work</div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex items-center gap-3 mb-8">
+                            <span class="text-xs text-neutral-500 uppercase tracking-wider mr-2">Follow:</span>
+                            <a href="https://www.facebook.com/raibasit.basit.94" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:facebook" width="18"></iconify-icon></a>
+                            <a href="https://www.instagram.com/raibasitbasit355/" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:instagram" width="18"></iconify-icon></a>
+                            <a href="https://x.com/raibasit913" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:twitter" width="18"></iconify-icon></a>
+                            <a href="https://www.linkedin.com/in/muhammad-basit-b155a1400/?skipRedirect=true"
+                                target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:linkedin" width="18"></iconify-icon></a>
+                            <a href="https://github.com/alibasit8687-debug" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:github" width="18"></iconify-icon></a>
+                            <a href="https://www.youtube.com/@raibasitking" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:youtube" width="18"></iconify-icon></a>
+                            <a href="https://www.tiktok.com/@raiking7829" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="ic:baseline-tiktok" width="18"></iconify-icon></a>
+                            <a href="https://wa.me/923274916727" target="_blank"
+                                class="social-icon w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                    icon="mdi:whatsapp" width="18"></iconify-icon></a>
+                        </div>
+
+                        <a href="#contact"
+                            class="btn-primary inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold text-white rounded-xl">
+                            Let's Talk
+                            <iconify-icon icon="mdi:arrow-right" width="18"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS SECTION ==================== -->
+        <section id="skills" class="relative py-24 md:py-32 radial-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:lightning-bolt" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">My Skills</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        Technical <span class="gradient-text">Expertise</span>
+                    </h2>
+                </div>
+
+                <!-- Skill Bars -->
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="reveal space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">HTML /
+                                    CSS</span><span class="text-sm text-orange-400 font-oswald">95%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">JavaScript /
+                                    TypeScript</span><span class="text-sm text-orange-400 font-oswald">92%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">React /
+                                    Next.js</span><span class="text-sm text-orange-400 font-oswald">90%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">Node.js /
+                                    Express</span><span class="text-sm text-orange-400 font-oswald">88%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">Python /
+                                    Django</span><span class="text-sm text-orange-400 font-oswald">85%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal space-y-6" style="transition-delay: 0.2s;">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">UI/UX Design
+                                    (Figma)</span><span class="text-sm text-orange-400 font-oswald">93%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="93%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">MongoDB /
+                                    PostgreSQL</span><span class="text-sm text-orange-400 font-oswald">87%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">AWS /
+                                    DevOps</span><span class="text-sm text-orange-400 font-oswald">80%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">Video Editing
+                                    (Premiere)</span><span class="text-sm text-orange-400 font-oswald">82%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2"><span class="text-sm font-medium">SEO &
+                                    Marketing</span><span class="text-sm text-orange-400 font-oswald">86%</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="skill-bar-fill h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"
+                                    data-width="86%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Icons -->
+                <div class="reveal">
+                    <div class="text-center mb-8">
+                        <h3 class="font-oswald text-xl uppercase tracking-wider text-neutral-400">Tech Stack</h3>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-center gap-4">
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:html-5" width="24"></iconify-icon><span
+                                class="text-xs font-medium">HTML5</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:css-3" width="24"></iconify-icon><span
+                                class="text-xs font-medium">CSS3</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:javascript" width="24"></iconify-icon><span
+                                class="text-xs font-medium">JavaScript</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:typescript-icon" width="24"></iconify-icon><span
+                                class="text-xs font-medium">TypeScript</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:react" width="24"></iconify-icon><span
+                                class="text-xs font-medium">React</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:nextjs-icon" width="24"></iconify-icon><span
+                                class="text-xs font-medium">Next.js</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:nodejs-icon" width="24"></iconify-icon><span
+                                class="text-xs font-medium">Node.js</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:python" width="24"></iconify-icon><span
+                                class="text-xs font-medium">Python</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:tailwindcss-icon" width="24"></iconify-icon><span
+                                class="text-xs font-medium">Tailwind</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:figma" width="16"></iconify-icon><span
+                                class="text-xs font-medium">Figma</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:mongodb-icon" width="16"></iconify-icon><span
+                                class="text-xs font-medium">MongoDB</span>
+                        </div>
+                        <div
+                            class="glass rounded-xl px-5 py-3 flex items-center gap-2 hover:border-orange-500/30 transition-colors">
+                            <iconify-icon icon="logos:git-icon" width="24"></iconify-icon><span
+                                class="text-xs font-medium">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SERVICES SECTION ==================== -->
+        <section id="services" class="relative py-24 md:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:briefcase" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">Services</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        What I <span class="gradient-text">Offer</span>
+                    </h2>
+                    <p class="text-neutral-400 mt-4 max-w-2xl mx-auto">Premium digital solutions tailored to your needs.
+                        Every project is crafted with precision, creativity, and attention to detail.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Service 1 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-8 group">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="mdi:monitor-dashboard" class="text-orange-500"
+                                width="28"></iconify-icon>
+                        </div>
+                        <h3 class="font-oswald text-xl uppercase tracking-wide mb-3">Web Development</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-6">Custom websites and web applications
+                            built with modern technologies. Responsive, fast, and scalable solutions.</p>
+                        <div
+                            class="flex items-center gap-2 text-orange-400 text-sm font-medium group-hover:gap-3 transition-all">
+                            Learn More <iconify-icon icon="mdi:arrow-right" width="16"></iconify-icon>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-8 group" style="transition-delay: 0.1s;">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="mdi:palette-swatch" class="text-orange-500" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="font-oswald text-xl uppercase tracking-wide mb-3">UI/UX Design</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-6">Beautiful, intuitive interfaces that
+                            delight users. From wireframes to pixel-perfect designs in Figma.</p>
+                        <div
+                            class="flex items-center gap-2 text-orange-400 text-sm font-medium group-hover:gap-3 transition-all">
+                            Learn More <iconify-icon icon="mdi:arrow-right" width="16"></iconify-icon>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-8 group" style="transition-delay: 0.2s;">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="mdi:cellphone" class="text-orange-500" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="font-oswald text-xl uppercase tracking-wide mb-3">Mobile Apps</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-6">Cross-platform mobile applications
+                            using React Native and Flutter. Native performance, single codebase.</p>
+                        <div
+                            class="flex items-center gap-2 text-orange-400 text-sm font-medium group-hover:gap-3 transition-all">
+                            Learn More <iconify-icon icon="mdi:arrow-right" width="16"></iconify-icon>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-8 group">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="mdi:brush-variant" class="text-orange-500" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="font-oswald text-xl uppercase tracking-wide mb-3">Brand Identity</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-6">Complete branding packages including
+                            logo design, color palettes, typography, and brand guidelines.</p>
+                        <div
+                            class="flex items-center gap-2 text-orange-400 text-sm font-medium group-hover:gap-3 transition-all">
+                            Learn More <iconify-icon icon="mdi:arrow-right" width="16"></iconify-icon>
+                        </div>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-8 group" style="transition-delay: 0.1s;">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="mdi:video-vintage" class="text-orange-500" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="font-oswald text-xl uppercase tracking-wide mb-3">Video Editing</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-6">Professional video editing for YouTube,
+                            social media, and commercials. Motion graphics included.</p>
+                        <div
+                            class="flex items-center gap-2 text-orange-400 text-sm font-medium group-hover:gap-3 transition-all">
+                            Learn More <iconify-icon icon="mdi:arrow-right" width="16"></iconify-icon>
+                        </div>
+                    </div>
+                    <!-- Service 6 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-8 group" style="transition-delay: 0.2s;">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <iconify-icon icon="mdi:chart-line" class="text-orange-500" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="font-oswald text-xl uppercase tracking-wide mb-3">SEO & Marketing</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-6">Data-driven SEO strategies and digital
+                            marketing campaigns to grow your online presence and traffic.</p>
+                        <div
+                            class="flex items-center gap-2 text-orange-400 text-sm font-medium group-hover:gap-3 transition-all">
+                            Learn More <iconify-icon icon="mdi:arrow-right" width="16"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== STATS SECTION ==================== -->
+        <section class="relative py-20 border-y border-white/5">
+            <div class="absolute inset-0 dot-pattern opacity-30"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="reveal text-center">
+                        <div class="font-oswald text-5xl md:text-6xl font-medium gradient-text counter"
+                            data-target="150">0</div>
+                        <div class="text-sm text-neutral-500 mt-2 uppercase tracking-wider">Projects Done</div>
+                    </div>
+                    <div class="reveal text-center" style="transition-delay: 0.1s;">
+                        <div class="font-oswald text-5xl md:text-6xl font-medium gradient-text counter"
+                            data-target="95">0</div>
+                        <div class="text-sm text-neutral-500 mt-2 uppercase tracking-wider">Happy Clients</div>
+                    </div>
+                    <div class="reveal text-center" style="transition-delay: 0.2s;">
+                        <div class="font-oswald text-5xl md:text-6xl font-medium gradient-text counter"
+                            data-target="15">0</div>
+                        <div class="text-sm text-neutral-500 mt-2 uppercase tracking-wider">Awards Won</div>
+                    </div>
+                    <div class="reveal text-center" style="transition-delay: 0.3s;">
+                        <div class="font-oswald text-5xl md:text-6xl font-medium gradient-text counter" data-target="8">
+                            0</div>
+                        <div class="text-sm text-neutral-500 mt-2 uppercase tracking-wider">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PORTFOLIO SECTION ==================== -->
+        <section id="portfolio" class="relative py-24 md:py-32 radial-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:image-multiple" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">Portfolio</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        Featured <span class="gradient-text">Projects</span>
+                    </h2>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="reveal flex flex-wrap items-center justify-center gap-3 mb-12">
+                    <button class="tab-btn active px-5 py-2 rounded-xl text-sm font-medium border border-white/10"
+                        data-filter="all">All</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-xl text-sm font-medium text-neutral-400 border border-transparent hover:border-white/10"
+                        data-filter="web">Web</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-xl text-sm font-medium text-neutral-400 border border-transparent hover:border-white/10"
+                        data-filter="design">Design</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-xl text-sm font-medium text-neutral-400 border border-transparent hover:border-white/10"
+                        data-filter="mobile">Mobile</button>
+                    <button
+                        class="tab-btn px-5 py-2 rounded-xl text-sm font-medium text-neutral-400 border border-transparent hover:border-white/10"
+                        data-filter="branding">Branding</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
+                    <!-- Project 1 -->
+                    <div class="reveal portfolio-item" data-category="web">
+                        <div class="card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://picsum.photos/seed/proj1vip/600/340.jpg" alt="Project"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                    <div class="flex items-center gap-3">
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:open-in-new" width="16"></iconify-icon></a>
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:github" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs text-orange-400 uppercase tracking-wider mb-2">Web Development</div>
+                                <h3 class="font-oswald text-lg uppercase tracking-wide">E-Commerce Platform</h3>
+                                <p class="text-xs text-neutral-500 mt-1">React, Node.js, MongoDB, Stripe</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="reveal portfolio-item" data-category="design" style="transition-delay: 0.1s;">
+                        <div class="card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://picsum.photos/seed/proj2vip/600/340.jpg" alt="Project"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                    <div class="flex items-center gap-3">
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:open-in-new" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs text-orange-400 uppercase tracking-wider mb-2">UI/UX Design</div>
+                                <h3 class="font-oswald text-lg uppercase tracking-wide">SaaS Dashboard</h3>
+                                <p class="text-xs text-neutral-500 mt-1">Figma, Prototyping, Design System</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="reveal portfolio-item" data-category="mobile" style="transition-delay: 0.2s;">
+                        <div class="card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://picsum.photos/seed/proj3vip/600/340.jpg" alt="Project"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                    <div class="flex items-center gap-3">
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:open-in-new" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs text-orange-400 uppercase tracking-wider mb-2">Mobile App</div>
+                                <h3 class="font-oswald text-lg uppercase tracking-wide">Fitness Tracker App</h3>
+                                <p class="text-xs text-neutral-500 mt-1">React Native, Firebase, Health API</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="reveal portfolio-item" data-category="branding">
+                        <div class="card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://picsum.photos/seed/proj4vip/600/340.jpg" alt="Project"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                    <div class="flex items-center gap-3">
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:open-in-new" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs text-orange-400 uppercase tracking-wider mb-2">Branding</div>
+                                <h3 class="font-oswald text-lg uppercase tracking-wide">Luxury Brand Identity</h3>
+                                <p class="text-xs text-neutral-500 mt-1">Logo, Guidelines, Collateral</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="reveal portfolio-item" data-category="web" style="transition-delay: 0.1s;">
+                        <div class="card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://picsum.photos/seed/proj5vip/600/340.jpg" alt="Project"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                    <div class="flex items-center gap-3">
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:open-in-new" width="16"></iconify-icon></a>
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:github" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs text-orange-400 uppercase tracking-wider mb-2">Web Development</div>
+                                <h3 class="font-oswald text-lg uppercase tracking-wide">Real Estate Portal</h3>
+                                <p class="text-xs text-neutral-500 mt-1">Next.js, PostgreSQL, Maps API</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="reveal portfolio-item" data-category="design" style="transition-delay: 0.2s;">
+                        <div class="card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://picsum.photos/seed/proj6vip/600/340.jpg" alt="Project"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
+                                    <div class="flex items-center gap-3">
+                                        <a href="#"
+                                            class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon
+                                                icon="mdi:open-in-new" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs text-orange-400 uppercase tracking-wider mb-2">UI/UX Design</div>
+                                <h3 class="font-oswald text-lg uppercase tracking-wide">Music Streaming App</h3>
+                                <p class="text-xs text-neutral-500 mt-1">Figma, Animation, Micro-interactions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCE / TIMELINE SECTION ==================== -->
+        <section id="experience" class="relative py-24 md:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:timeline" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">Experience</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        My <span class="gradient-text">Journey</span>
+                    </h2>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="timeline-line hidden md:block"></div>
+                    <!-- Timeline Item 1 -->
+                    <div class="reveal relative flex flex-col md:flex-row items-center gap-8 mb-16">
+                        <div class="flex-1 md:text-right">
+                            <div class="glass rounded-2xl p-6 card-hover">
+                                <div class="text-xs text-orange-400 font-medium mb-2">2022 — Present</div>
+                                <h3 class="font-oswald text-xl uppercase tracking-wide mb-2">Senior Full Stack Developer
+                                </h3>
+                                <p class="text-sm text-neutral-500 mb-2">TechCorp International</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">Leading a team of 12 developers.
+                                    Architected microservices handling 10M+ daily requests. Reduced deployment time by
+                                    60%.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden md:flex w-12 h-12 rounded-full bg-orange-500/20 border-2 border-orange-500 items-center justify-center z-10 flex-shrink-0">
+                            <iconify-icon icon="mdi:star" class="text-orange-500" width="20"></iconify-icon>
+                        </div>
+                        <div class="flex-1"></div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="reveal relative flex flex-col md:flex-row items-center gap-8 mb-16"
+                        style="transition-delay: 0.15s;">
+                        <div class="flex-1"></div>
+                        <div
+                            class="hidden md:flex w-12 h-12 rounded-full bg-orange-500/20 border-2 border-orange-500 items-center justify-center z-10 flex-shrink-0">
+                            <iconify-icon icon="mdi:code-tags" class="text-orange-500" width="20"></iconify-icon>
+                        </div>
+                        <div class="flex-1">
+                            <div class="glass rounded-2xl p-6 card-hover">
+                                <div class="text-xs text-orange-400 font-medium mb-2">2020 — 2022</div>
+                                <h3 class="font-oswald text-xl uppercase tracking-wide mb-2">Full Stack Developer</h3>
+                                <p class="text-sm text-neutral-500 mb-2">Digital Agency Pro</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">Developed 40+ client projects.
+                                    Specialized in React, Node.js, and cloud infrastructure. Mentored junior developers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="reveal relative flex flex-col md:flex-row items-center gap-8 mb-16"
+                        style="transition-delay: 0.3s;">
+                        <div class="flex-1 md:text-right">
+                            <div class="glass rounded-2xl p-6 card-hover">
+                                <div class="text-xs text-orange-400 font-medium mb-2">2018 — 2020</div>
+                                <h3 class="font-oswald text-xl uppercase tracking-wide mb-2">Frontend Developer</h3>
+                                <p class="text-sm text-neutral-500 mb-2">StartupHub Inc.</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">Built responsive web interfaces for
+                                    3 SaaS products. Improved performance scores by 40%. Led the design system
+                                    initiative.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden md:flex w-12 h-12 rounded-full bg-orange-500/20 border-2 border-orange-500 items-center justify-center z-10 flex-shrink-0">
+                            <iconify-icon icon="mdi:palette" class="text-orange-500" width="20"></iconify-icon>
+                        </div>
+                        <div class="flex-1"></div>
+                    </div>
+                    <!-- Timeline Item 4 -->
+                    <div class="reveal relative flex flex-col md:flex-row items-center gap-8"
+                        style="transition-delay: 0.45s;">
+                        <div class="flex-1"></div>
+                        <div
+                            class="hidden md:flex w-12 h-12 rounded-full bg-orange-500/20 border-2 border-orange-500 items-center justify-center z-10 flex-shrink-0">
+                            <iconify-icon icon="mdi:school" class="text-orange-500" width="20"></iconify-icon>
+                        </div>
+                        <div class="flex-1">
+                            <div class="glass rounded-2xl p-6 card-hover">
+                                <div class="text-xs text-orange-400 font-medium mb-2">2014 — 2018</div>
+                                <h3 class="font-oswald text-xl uppercase tracking-wide mb-2">Computer Science Degree
+                                </h3>
+                                <p class="text-sm text-neutral-500 mb-2">University of Technology</p>
+                                <p class="text-sm text-neutral-400 leading-relaxed">Graduated with honors. Specialized
+                                    in software engineering and human-computer interaction. Won 3 hackathons.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS SECTION ==================== -->
+        <section id="testimonials" class="relative py-24 md:py-32 radial-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:format-quote-close" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">Testimonials</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        Client <span class="gradient-text">Reviews</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-7">
+                        <div class="flex items-center gap-1 mb-4">
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-neutral-300 leading-relaxed mb-6">"Absolutely outstanding work! The
+                            website exceeded all our expectations. The attention to detail and performance optimization
+                            was remarkable. Highly recommended!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://picsum.photos/seed/client1vip/48/48.jpg" alt="Client"
+                                class="w-11 h-11 rounded-full object-cover border border-white/10">
+                            <div>
+                                <div class="text-sm font-medium">Sarah Johnson</div>
+                                <div class="text-xs text-neutral-500">CEO, TechStart Inc.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-7" style="transition-delay: 0.1s;">
+                        <div class="flex items-center gap-1 mb-4">
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-neutral-300 leading-relaxed mb-6">"One of the best developers I've worked
+                            with. Professional, creative, and always delivers on time. The mobile app he built for us
+                            has 50K+ downloads already!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://picsum.photos/seed/client2vip/48/48.jpg" alt="Client"
+                                class="w-11 h-11 rounded-full object-cover border border-white/10">
+                            <div>
+                                <div class="text-sm font-medium">Michael Chen</div>
+                                <div class="text-xs text-neutral-500">Founder, FitLife App</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-7" style="transition-delay: 0.2s;">
+                        <div class="flex items-center gap-1 mb-4">
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star-half-full" class="text-yellow-500" width="16"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-neutral-300 leading-relaxed mb-6">"The brand identity package was
+                            phenomenal. Every element was carefully crafted to reflect our vision. Our brand recognition
+                            increased by 300% after the rebrand."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://picsum.photos/seed/client3vip/48/48.jpg" alt="Client"
+                                class="w-11 h-11 rounded-full object-cover border border-white/10">
+                            <div>
+                                <div class="text-sm font-medium">Emily Rodriguez</div>
+                                <div class="text-xs text-neutral-500">CMO, Luxe Fashion</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-7">
+                        <div class="flex items-center gap-1 mb-4">
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-neutral-300 leading-relaxed mb-6">"Incredible SEO work! Our website went
+                            from page 5 to page 1 on Google within 3 months. Organic traffic increased by 500%. Worth
+                            every penny!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://picsum.photos/seed/client4vip/48/48.jpg" alt="Client"
+                                class="w-11 h-11 rounded-full object-cover border border-white/10">
+                            <div>
+                                <div class="text-sm font-medium">David Kim</div>
+                                <div class="text-xs text-neutral-500">Owner, GreenMart</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 5 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-7" style="transition-delay: 0.1s;">
+                        <div class="flex items-center gap-1 mb-4">
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-neutral-300 leading-relaxed mb-6">"The video editing quality is
+                            top-notch. Our YouTube channel grew from 1K to 100K subscribers in 6 months. The motion
+                            graphics are absolutely stunning!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://picsum.photos/seed/client5vip/48/48.jpg" alt="Client"
+                                class="w-11 h-11 rounded-full object-cover border border-white/10">
+                            <div>
+                                <div class="text-sm font-medium">Alex Thompson</div>
+                                <div class="text-xs text-neutral-500">YouTuber, 100K Subs</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 6 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] p-7" style="transition-delay: 0.2s;">
+                        <div class="flex items-center gap-1 mb-4">
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                            <iconify-icon icon="mdi:star" class="text-yellow-500" width="16"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-neutral-300 leading-relaxed mb-6">"A true professional who goes above and
+                            beyond. The dashboard design was intuitive and beautiful. Our users love the new interface.
+                            10/10 would hire again!"</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://picsum.photos/seed/client6vip/48/48.jpg" alt="Client"
+                                class="w-11 h-11 rounded-full object-cover border border-white/10">
+                            <div>
+                                <div class="text-sm font-medium">Lisa Park</div>
+                                <div class="text-xs text-neutral-500">Product Manager, DataFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== BLOG SECTION ==================== -->
+        <section id="blog" class="relative py-24 md:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:post" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">Blog</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        Latest <span class="gradient-text">Articles</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Blog 1 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] overflow-hidden group">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://picsum.photos/seed/blog1vip/600/340.jpg" alt="Blog"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-4 left-4 px-3 py-1 rounded-full bg-orange-500/90 text-xs font-medium">
+                                Development</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-neutral-500 mb-3">
+                                <span>Jan 15, 2025</span>
+                                <span>•</span>
+                                <span>5 min read</span>
+                            </div>
+                            <h3
+                                class="font-oswald text-lg uppercase tracking-wide mb-2 group-hover:text-orange-400 transition-colors">
+                                The Future of Web Development in 2025</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed">Exploring AI-powered development tools,
+                                edge computing, and the next generation of web frameworks...</p>
+                        </div>
+                    </div>
+                    <!-- Blog 2 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] overflow-hidden group"
+                        style="transition-delay: 0.1s;">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://picsum.photos/seed/blog2vip/600/340.jpg" alt="Blog"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-4 left-4 px-3 py-1 rounded-full bg-orange-500/90 text-xs font-medium">
+                                Design</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-neutral-500 mb-3">
+                                <span>Jan 8, 2025</span>
+                                <span>•</span>
+                                <span>7 min read</span>
+                            </div>
+                            <h3
+                                class="font-oswald text-lg uppercase tracking-wide mb-2 group-hover:text-orange-400 transition-colors">
+                                Mastering Dark Mode UI Design</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed">Best practices for creating stunning
+                                dark interfaces that are both beautiful and accessible...</p>
+                        </div>
+                    </div>
+                    <!-- Blog 3 -->
+                    <div class="reveal card-hover rounded-2xl bg-[#090A0B] overflow-hidden group"
+                        style="transition-delay: 0.2s;">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://picsum.photos/seed/blog3vip/600/340.jpg" alt="Blog"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-4 left-4 px-3 py-1 rounded-full bg-orange-500/90 text-xs font-medium">
+                                Career</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-neutral-500 mb-3">
+                                <span>Dec 28, 2024</span>
+                                <span>•</span>
+                                <span>4 min read</span>
+                            </div>
+                            <h3
+                                class="font-oswald text-lg uppercase tracking-wide mb-2 group-hover:text-orange-400 transition-colors">
+                                How I Landed My Dream Remote Job</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed">My journey from freelancing to a senior
+                                role at a top tech company, and lessons learned along the way...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FAQ SECTION ==================== -->
+        <section id="faq" class="relative py-24 md:py-32 radial-bg">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:help-circle" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">FAQ</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        Common <span class="gradient-text">Questions</span>
+                    </h2>
+                </div>
+
+                <div class="reveal space-y-3">
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="text-sm font-medium pr-4">What is your typical project timeline?</span>
+                            <iconify-icon icon="mdi:plus" class="faq-icon text-orange-500 flex-shrink-0"
+                                width="20"></iconify-icon>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-neutral-400 leading-relaxed pb-4">Most projects take 2-8 weeks
+                                depending on complexity. A simple landing page can be done in 1-2 weeks, while a full
+                                web application may take 6-8 weeks. I always provide a detailed timeline before
+                                starting.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="text-sm font-medium pr-4">What are your payment terms?</span>
+                            <iconify-icon icon="mdi:plus" class="faq-icon text-orange-500 flex-shrink-0"
+                                width="20"></iconify-icon>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-neutral-400 leading-relaxed pb-4">I typically work with a 50% upfront
+                                deposit and 50% upon completion. For larger projects, we can arrange milestone-based
+                                payments. I accept PayPal, bank transfer, and crypto.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="text-sm font-medium pr-4">Do you provide post-launch support?</span>
+                            <iconify-icon icon="mdi:plus" class="faq-icon text-orange-500 flex-shrink-0"
+                                width="20"></iconify-icon>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-neutral-400 leading-relaxed pb-4">Absolutely! Every project includes
+                                30 days of free bug fixes and minor adjustments. After that, I offer monthly maintenance
+                                packages starting from $99/month for ongoing support.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="text-sm font-medium pr-4">Can you work with my existing team?</span>
+                            <iconify-icon icon="mdi:plus" class="faq-icon text-orange-500 flex-shrink-0"
+                                width="20"></iconify-icon>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-neutral-400 leading-relaxed pb-4">Yes! I have extensive experience
+                                working as part of distributed teams. I'm comfortable with Agile/Scrum methodologies,
+                                Git workflows, code reviews, and all major collaboration tools.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left">
+                            <span class="text-sm font-medium pr-4">What makes you different from other
+                                developers?</span>
+                            <iconify-icon icon="mdi:plus" class="faq-icon text-orange-500 flex-shrink-0"
+                                width="20"></iconify-icon>
+                        </button>
+                        <div class="faq-answer px-5">
+                            <p class="text-sm text-neutral-400 leading-relaxed pb-4">I combine technical expertise with
+                                design sensibility. I don't just write code — I create experiences. My background in
+                                both development and design allows me to see the big picture and deliver holistic
+                                solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact" class="relative py-24 md:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
+                        <iconify-icon icon="mdi:email-fast" class="text-orange-500" width="14"></iconify-icon>
+                        <span class="text-xs font-medium text-orange-400 uppercase tracking-wider">Contact</span>
+                    </div>
+                    <h2
+                        class="font-oswald text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-tight leading-[0.95]">
+                        Let's Work <span class="gradient-text">Together</span>
+                    </h2>
+                    <p class="text-neutral-400 mt-4 max-w-xl mx-auto">Have a project in mind? I'd love to hear about it.
+                        Drop me a message and let's create something amazing.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Contact Info -->
+                    <div class="reveal flex-1 space-y-6">
+                        <div class="glass rounded-2xl p-6 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                                    <iconify-icon icon="mdi:email-outline" class="text-orange-500"
+                                        width="22"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Email</div>
+                                    <div class="text-sm font-medium">raisahab2773@gmail.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                                    <iconify-icon icon="mdi:phone-outline" class="text-orange-500"
+                                        width="22"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Phone</div>
+                                    <div class="text-sm font-medium">+92 327 4916727</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center flex-shrink-0">
+                                    <iconify-icon icon="mdi:map-marker-outline" class="text-orange-500"
+                                        width="22"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Location</div>
+                                    <div class="text-sm font-medium">Pakistan 🇵🇰</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass rounded-2xl p-6 card-hover">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                                    <span class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Status</div>
+                                    <div class="text-sm font-medium text-green-400">Available for new projects</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Social Links -->
+                        <div class="pt-4">
+                            <div class="text-xs text-neutral-500 uppercase tracking-wider mb-4">Connect with me:</div>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="https://www.facebook.com/raibasit.basit.94" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:facebook" width="20"></iconify-icon></a>
+                                <a href="https://www.instagram.com/raibasitbasit355/" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:instagram" width="20"></iconify-icon></a>
+                                <a href="https://x.com/raibasit913" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:twitter" width="20"></iconify-icon></a>
+                                <a href="https://www.linkedin.com/in/muhammad-basit-b155a1400/?skipRedirect=true"
+                                    target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:linkedin" width="20"></iconify-icon></a>
+                                <a href="https://github.com/alibasit8687-debug" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:github" width="20"></iconify-icon></a>
+                                <a href="https://www.youtube.com/@raibasitking" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:youtube" width="20"></iconify-icon></a>
+                                <a href="https://tiktok.com/@raiking7829" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="ic:baseline-tiktok" width="20"></iconify-icon></a>
+                                <a href="https://wa.me/923274916727" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:whatsapp" width="20"></iconify-icon></a>
+                                <a href="https://snapchat.com/add/rai_basit26" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:snapchat" width="20"></iconify-icon></a>
+                                <a href="https://www.pinterest.com/alibasit8687/" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:pinterest" width="20"></iconify-icon></a>
+                                <a href="https://www.reddit.com/user/MuhammadBasit7262/" target="_blank"
+                                    class="social-icon w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center text-slate-400"><iconify-icon
+                                        icon="mdi:reddit" width="20"></iconify-icon></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="reveal flex-1" style="transition-delay: 0.2s;">
+                        <form id="contactForm" action="https://formspree.io/f/mpqyavpe" method="POST"
+                            class="glass rounded-2xl p-8 border-beam-container space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Name
+                                        *</label>
+                                    <input type="text" name="name" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-orange-500/50 focus:outline-none focus:ring-1 focus:ring-orange-500/20 transition-colors"
+                                        placeholder="Your Name">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Email
+                                        *</label>
+                                    <input type="email" name="email" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-orange-500/50 focus:outline-none focus:ring-1 focus:ring-orange-500/20 transition-colors"
+                                        placeholder="your@email.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Subject
+                                    *</label>
+                                <input type="text" name="subject" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-orange-500/50 focus:outline-none focus:ring-1 focus:ring-orange-500/20 transition-colors"
+                                    placeholder="Project Discussion">
+                            </div>
+                            <div>
+                                <label class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Budget
+                                    Range</label>
+                                <select name="budget"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-neutral-400 focus:border-orange-500/50 focus:outline-none focus:ring-1 focus:ring-orange-500/20 transition-colors appearance-none"
+                                    style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22%23a3a3a3%22 d=%22M7 10l5 5 5-5z%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 16px center;">
+                                    <option value="">Select Budget</option>
+                                    <option value="500-1000">$500 - $1,000</option>
+                                    <option value="1000-3000">$1,000 - $3,000</option>
+                                    <option value="3000-5000">$3,000 - $5,000</option>
+                                    <option value="5000-10000">$5,000 - $10,000</option>
+                                    <option value="10000+">$10,000+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs text-neutral-500 uppercase tracking-wider mb-2 block">Message
+                                    *</label>
+                                <textarea name="message" required rows="5"
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-neutral-600 focus:border-orange-500/50 focus:outline-none focus:ring-1 focus:ring-orange-500/20 transition-colors resize-none"
+                                    placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <!-- Honeypot spam protection -->
+                            <input type="text" name="_gotcha" style="display:none">
+                            <button type="submit" id="contactSubmitBtn"
+                                class="btn-primary w-full py-3.5 text-sm font-semibold text-white rounded-xl flex items-center justify-center gap-2">
+                                <iconify-icon icon="mdi:send" width="18"></iconify-icon>
+                                Send Message
+                            </button>
+                            <p class="text-xs text-neutral-600 text-center">I'll get back to you within 24 hours.</p>
+                        </form>
+                    </div>
+
+                    <!-- ==================== CTA SECTION ==================== -->
+                    <section class="relative py-24 md:py-32 overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-orange-600/10 via-orange-500/5 to-orange-600/10">
+                        </div>
+                        <div class="absolute inset-0 dot-pattern opacity-20"></div>
+                        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+                            <h2
+                                class="font-oswald text-4xl md:text-5xl lg:text-7xl font-medium uppercase tracking-tight leading-[0.95] mb-6">
+                                Ready to Start<br><span class="gradient-text">Your Project?</span>
+                            </h2>
+                            <p class="text-neutral-400 text-lg max-w-xl mx-auto mb-10">Let's turn your vision into
+                                reality. I'm just
+                                one message away from making your next big project happen.</p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="#contact"
+                                    class="btn-primary px-10 py-4 text-lg font-semibold text-white rounded-xl flex items-center gap-2">
+                                    Start a Project
+                                    <iconify-icon icon="mdi:rocket-launch" width="20"></iconify-icon>
+                                </a>
+                                <a href="https://wa.me/923274916727" target="_blank"
+                                    class="btn-outline px-10 py-4 text-lg font-medium text-white rounded-xl flex items-center gap-2">
+                                    <iconify-icon icon="mdi:whatsapp" width="22" class="text-green-500"></iconify-icon>
+                                    WhatsApp Me
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ==================== FOOTER ==================== -->
+                    <footer class="relative border-t border-white/5 pt-16 pb-8">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                                <!-- Footer Col 1 -->
+                                <div>
+                                    <a href="#hero" class="flex items-center gap-3 mb-5">
+                                        <div
+                                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                                            <span class="font-oswald font-bold text-black text-lg">V</span>
+                                        </div>
+                                        <span class="font-oswald font-medium text-lg tracking-wide uppercase">VIP<span
+                                                class="text-orange-500">Portfolio</span></span>
+                                    </a>
+                                    <p class="text-sm text-neutral-500 leading-relaxed mb-6">Crafting premium digital
+                                        experiences
+                                        with passion and precision. Your vision, my expertise.</p>
+                                    <!-- Footer Social Links -->
+                                    <div class="flex flex-wrap gap-2">
+                                        <a href="https://www.facebook.com/raibasit.basit.94" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:facebook" width="16"></iconify-icon></a>
+                                        <a href="https://www.instagram.com/raibasitbasit355/" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:instagram" width="16"></iconify-icon></a>
+                                        <a href="https://x.com/raibasit913" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:twitter" width="16"></iconify-icon></a>
+                                        <a href="https://www.linkedin.com/in/muhammad-basit-b155a1400/?skipRedirect=true"
+                                            target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:linkedin" width="16"></iconify-icon></a>
+                                        <a href="https://github.com/alibasit8687-debug" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:github" width="16"></iconify-icon></a>
+                                        <a href="https://www.youtube.com/@raibasitking" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:youtube" width="16"></iconify-icon></a>
+                                        <a href="https://www.tiktok.com/@raiking7829" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="ic:baseline-tiktok" width="16"></iconify-icon></a>
+                                        <a href="https://wa.me/923274916727" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:whatsapp" width="16"></iconify-icon></a>
+                                        <a href="https://snapchat.com/add/rai_basit26" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:snapchat" width="16"></iconify-icon></a>
+                                        <a href="https://www.pinterest.com/alibasit8687/" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:pinterest" width="16"></iconify-icon></a>
+                                        <a href="https://www.reddit.com/user/MuhammadBasit7262/" target="_blank"
+                                            class="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-neutral-500 hover:text-orange-500 hover:bg-orange-500/10 transition-all"><iconify-icon
+                                                icon="mdi:reddit" width="16"></iconify-icon></a>
+                                    </div>
+                                </div>
+                                <!-- Footer Col 2 -->
+                                <div>
+                                    <h4 class="font-oswald text-sm uppercase tracking-wider mb-5">Quick Links</h4>
+                                    <ul class="space-y-3">
+                                        <li><a href="#hero"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Home</a>
+                                        </li>
+                                        <li><a href="#about"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">About
+                                                Me</a></li>
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Services</a>
+                                        </li>
+                                        <li><a href="#portfolio"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Portfolio</a>
+                                        </li>
+                                        <li><a href="#blog"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Blog</a>
+                                        </li>
+                                        <li><a href="#contact"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Footer Col 3 -->
+                                <div>
+                                    <h4 class="font-oswald text-sm uppercase tracking-wider mb-5">Services</h4>
+                                    <ul class="space-y-3">
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Web
+                                                Development</a></li>
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">UI/UX
+                                                Design</a></li>
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Mobile
+                                                Apps</a></li>
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Brand
+                                                Identity</a></li>
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">Video
+                                                Editing</a></li>
+                                        <li><a href="#services"
+                                                class="text-sm text-neutral-500 hover:text-orange-400 transition-colors">SEO
+                                                &
+                                                Marketing</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Footer Col 4 -->
+                                <div>
+                                    <h4 class="font-oswald text-sm uppercase tracking-wider mb-5">Newsletter</h4>
+                                    <p class="text-sm text-neutral-500 leading-relaxed mb-4">Subscribe to get updates on
+                                        my latest
+                                        projects and articles.</p>
+                                    <form id="newsletterForm" class="flex gap-2">
+                                        <input type="email" required
+                                            class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-neutral-600 focus:border-orange-500/50 focus:outline-none transition-colors"
+                                            placeholder="your@email.com">
+                                        <button type="submit" class="btn-primary px-4 py-2.5 rounded-xl flex-shrink-0">
+                                            <iconify-icon icon="mdi:send" width="16"></iconify-icon>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Footer Bottom -->
+                            <div
+                                class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                                <p class="text-xs text-neutral-600">© 2026 BASITPortfolio. All rights reserved. Crafted
+                                    with
+                                    <iconify-icon icon="mdi:heart" class="text-orange-500" width="12"></iconify-icon> &
+                                    <iconify-icon icon="mdi:code-tags" class="text-orange-500"
+                                        width="12"></iconify-icon>
+                                </p>
+                                <div class="flex items-center gap-6">
+                                    <a href="#"
+                                        class="text-xs text-neutral-600 hover:text-neutral-400 transition-colors">Privacy
+                                        Policy</a>
+                                    <a href="#"
+                                        class="text-xs text-neutral-600 hover:text-neutral-400 transition-colors">Terms
+                                        of
+                                        Service</a>
+                                    <a href="#"
+                                        class="text-xs text-neutral-600 hover:text-neutral-400 transition-colors">Sitemap</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                    <!-- ==================== BACK TO TOP ==================== -->
+                    <button id="backToTop"
+                        class="back-to-top fixed bottom-6 right-6 z-40 w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 hover:scale-110 transition-all">
+                        <iconify-icon icon="mdi:chevron-up" width="24"></iconify-icon>
+                    </button>
+
+                    <!-- ==================== TOAST ==================== -->
+                    <div id="toast" class="toast">
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="mdi:check-circle" class="text-green-500" width="20"></iconify-icon>
+                            <span id="toastMessage" class="text-sm font-medium">Message sent successfully!</span>
+                        </div>
+                    </div>
+
+                    <!-- ==================== JAVASCRIPT ==================== -->
+                    <script>
+                        // ===== Cursor Glow =====
+                        const cursorGlow = document.getElementById('cursorGlow');
+                        if (window.innerWidth > 768) {
+                            document.addEventListener('mousemove', (e) => {
+                                cursorGlow.style.left = e.clientX + 'px';
+                                cursorGlow.style.top = e.clientY + 'px';
+                            });
+                        } else {
+                            cursorGlow.style.display = 'none';
+                        }
+
+                        // ===== Navbar Scroll Effect =====
+                        const navbar = document.getElementById('navbar');
+                        let lastScroll = 0;
+                        window.addEventListener('scroll', () => {
+                            const currentScroll = window.pageYOffset;
+                            if (currentScroll > 100) {
+                                navbar.style.background = 'rgba(0,0,0,0.85)';
+                                navbar.style.padding = '12px 16px';
+                                navbar.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+                            } else {
+                                navbar.style.background = 'rgba(0,0,0,0.6)';
+                                navbar.style.padding = '20px 16px';
+                                navbar.style.borderBottom = 'none';
+                            }
+                            lastScroll = currentScroll;
+                        });
+
+                        // ===== Mobile Menu =====
+                        const mobileToggle = document.getElementById('mobileToggle');
+                        const mobileMenu = document.getElementById('mobileMenu');
+                        const mobileOverlay = document.getElementById('mobileOverlay');
+                        const bar1 = document.getElementById('bar1');
+                        const bar2 = document.getElementById('bar2');
+                        const bar3 = document.getElementById('bar3');
+                        let menuOpen = false;
+
+                        function toggleMenu() {
+                            menuOpen = !menuOpen;
+                            if (menuOpen) {
+                                mobileMenu.classList.add('open');
+                                mobileOverlay.classList.remove('hidden');
+                                setTimeout(() => mobileOverlay.style.opacity = '1', 10);
+                                bar1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                                bar2.style.opacity = '0';
+                                bar3.style.transform = 'rotate(-45deg) translate(4px, -4px)';
+                                bar3.style.width = '20px';
+                                bar3.style.marginLeft = '0';
+                                document.body.style.overflow = 'hidden';
+                            } else {
+                                mobileMenu.classList.remove('open');
+                                mobileOverlay.style.opacity = '0';
+                                setTimeout(() => mobileOverlay.classList.add('hidden'), 300);
+                                bar1.style.transform = '';
+                                bar2.style.opacity = '1';
+                                bar3.style.transform = '';
+                                bar3.style.width = '';
+                                bar3.style.marginLeft = '';
+                                document.body.style.overflow = '';
+                            }
+                        }
+                        mobileToggle.addEventListener('click', toggleMenu);
+                        mobileOverlay.addEventListener('click', toggleMenu);
+                        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                            link.addEventListener('click', () => { if (menuOpen) toggleMenu(); });
+                        });
+
+                        // ===== Scroll Reveal =====
+                        const revealElements = document.querySelectorAll('.reveal');
+                        const revealObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('visible');
+                                }
+                            });
+                        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                        revealElements.forEach(el => revealObserver.observe(el));
+
+                        // ===== Skill Bars Animation =====
+                        const skillBars = document.querySelectorAll('.skill-bar-fill');
+                        const skillObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const width = entry.target.getAttribute('data-width');
+                                    entry.target.style.width = width;
+                                }
+                            });
+                        }, { threshold: 0.5 });
+                        skillBars.forEach(bar => skillObserver.observe(bar));
+
+                        // ===== Counter Animation =====
+                        function animateCounter(el) {
+                            const target = parseInt(el.getAttribute('data-target'));
+                            const duration = 2000;
+                            const start = performance.now();
+                            function update(now) {
+                                const elapsed = now - start;
+                                const progress = Math.min(elapsed / duration, 1);
+                                const eased = 1 - Math.pow(1 - progress, 3);
+                                el.textContent = Math.round(target * eased) + '+';
+                                if (progress < 1) requestAnimationFrame(update);
+                            }
+                            requestAnimationFrame(update);
+                        }
+                        const counters = document.querySelectorAll('.counter');
+                        const counterObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    animateCounter(entry.target);
+                                    counterObserver.unobserve(entry.target);
+                                }
+                            });
+                        }, { threshold: 0.5 });
+                        counters.forEach(c => counterObserver.observe(c));
+
+                        // ===== Hero Stats Animation =====
+                        function animateHeroStat(id, target) {
+                            const el = document.getElementById(id);
+                            if (!el) return;
+                            const duration = 1500;
+                            const start = performance.now();
+                            function update(now) {
+                                const elapsed = now - start;
+                                const progress = Math.min(elapsed / duration, 1);
+                                const eased = 1 - Math.pow(1 - progress, 3);
+                                el.textContent = Math.round(target * eased) + '+';
+                                if (progress < 1) requestAnimationFrame(update);
+                            }
+                            requestAnimationFrame(update);
+                        }
+                        setTimeout(() => {
+                            animateHeroStat('stat1', 150);
+                            animateHeroStat('stat2', 95);
+                            animateHeroStat('stat3', 15);
+                        }, 1200);
+
+                        // ===== Portfolio Filter =====
+                        const filterBtns = document.querySelectorAll('.tab-btn');
+                        const portfolioItems = document.querySelectorAll('.portfolio-item');
+                        filterBtns.forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                filterBtns.forEach(b => b.classList.remove('active'));
+                                btn.classList.add('active');
+                                const filter = btn.getAttribute('data-filter');
+                                portfolioItems.forEach(item => {
+                                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                                        item.style.display = '';
+                                        item.style.animation = 'animationIn 0.5s ease-out both';
+                                    } else {
+                                        item.style.display = 'none';
+                                    }
+                                });
+                            });
+                        });
+
+                        // ===== FAQ Accordion =====
+                        document.querySelectorAll('.faq-toggle').forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                const item = btn.parentElement;
+                                const answer = item.querySelector('.faq-answer');
+                                const isActive = item.classList.contains('active');
+                                // Close all
+                                document.querySelectorAll('.faq-item').forEach(i => {
+                                    i.classList.remove('active');
+                                    i.querySelector('.faq-answer').classList.remove('open');
+                                });
+                                // Open clicked if wasn't active
+                                if (!isActive) {
+                                    item.classList.add('active');
+                                    answer.classList.add('open');
+                                }
+                            });
+                        });
+
+                        // ===== Toast Notification =====
+                        function showToast(message) {
+                            const toast = document.getElementById('toast');
+                            const toastMsg = document.getElementById('toastMessage');
+                            toastMsg.textContent = message;
+                            toast.classList.add('show');
+                            setTimeout(() => toast.classList.remove('show'), 4000);
+                        }
+
+                        // ===== Contact Form =====
+                        document.getElementById('contactForm').addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            const btn = e.target.querySelector('button[type="submit"]');
+                            btn.innerHTML = '<iconify-icon icon="mdi:loading" width="18" class="animate-spin"></iconify-icon> Sending...';
+                            btn.disabled = true;
+                            setTimeout(() => {
+                                btn.innerHTML = '<iconify-icon icon="mdi:check" width="18"></iconify-icon> Sent!';
+                                showToast('Message sent successfully! I\'ll get back to you soon.');
+                                e.target.reset();
+                                setTimeout(() => {
+                                    btn.innerHTML = '<iconify-icon icon="mdi:send" width="18"></iconify-icon> Send Message';
+                                    btn.disabled = false;
+                                }, 3000);
+                            }, 2000);
+                        });
+
+                        // ===== Newsletter Form =====
+                        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            showToast('Subscribed successfully! Welcome aboard.');
+                            e.target.reset();
+                        });
+
+                        // ===== Back to Top =====
+                        const backToTop = document.getElementById('backToTop');
+                        window.addEventListener('scroll', () => {
+                            if (window.pageYOffset > 500) {
+                                backToTop.classList.add('visible');
+                            } else {
+                                backToTop.classList.remove('visible');
+                            }
+                        });
+                        backToTop.addEventListener('click', () => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        });
+
+                        // ===== Smooth Scroll for anchor links =====
+                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                            anchor.addEventListener('click', function (e) {
+                                const target = document.querySelector(this.getAttribute('href'));
+                                if (target) {
+                                    e.preventDefault();
+                                    const offset = 80;
+                                    const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                                    window.scrollTo({ top: position, behavior: 'smooth' });
+                                }
+                            });
+                        });
+
+                        // ===== Active Nav Link Highlight =====
+                        const sections = document.querySelectorAll('section[id]');
+                        window.addEventListener('scroll', () => {
+                            let current = '';
+                            sections.forEach(section => {
+                                const sectionTop = section.offsetTop - 150;
+                                if (window.pageYOffset >= sectionTop) {
+                                    current = section.getAttribute('id');
+                                }
+                            });
+                            document.querySelectorAll('.nav-link').forEach(link => {
+                                link.style.color = '';
+                                if (link.getAttribute('href') === '#' + current) {
+                                    link.style.color = '#f97316';
+                                }
+                            });
+                        });
+                    </script>
+    </body>
+
+</html>
